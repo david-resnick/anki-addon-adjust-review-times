@@ -4,3 +4,4 @@ __pycache__/
 *.log
 *.anki2
 addon/backups/
+dist/
