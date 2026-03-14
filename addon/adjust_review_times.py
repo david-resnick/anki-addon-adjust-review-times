@@ -516,6 +516,14 @@ def apply_adjustments(start_date, end_date, source_tz_name, home_tz_name):
         mw.col.conf[CONFIG_KEY_ADJUSTMENTS].append(adjustment_record)
         mw.col.setMod()
 
+        # Force a full sync on next sync. Direct revlog ID changes can't be
+        # handled by incremental sync (the old IDs still exist on the server),
+        # so we mark the schema as modified to trigger a one-way upload.
+        try:
+            mw.col.modSchema(check=False)
+        except AttributeError:
+            mw.col.mod_schema(check=False)
+
         # Write to log file
         write_log_entry({
             "adjustment_record": adjustment_record,
