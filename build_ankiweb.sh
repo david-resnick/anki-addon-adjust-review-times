@@ -10,7 +10,7 @@ mkdir -p dist
 rm -f "$OUT"
 
 cd addon
-zip -r "../$OUT" . --exclude "*.pyc" --exclude "__pycache__/*" --exclude ".DS_Store" --exclude "backups/*" --exclude "*.log" --exclude "*.anki2" --exclude "meta.json"
+zip -r "../$OUT" . --exclude "*.pyc" --exclude "__pycache__/*" --exclude ".DS_Store" --exclude "backups/*" --exclude "*.log" --exclude "*.anki2" --exclude "meta.json" --exclude "manifest.json"
 cd ..
 
 echo "Built: $OUT"

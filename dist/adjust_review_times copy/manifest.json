@@ -1,0 +1,10 @@
+{
+    "name": "Adjust Review Times (Timezone)",
+    "package": "adjust_review_times",
+    "author": "",
+    "version": "1.0.0",
+    "homepage": "",
+    "min_point_version": 45,
+    "max_point_version": -1,
+    "conflicts": []
+}
