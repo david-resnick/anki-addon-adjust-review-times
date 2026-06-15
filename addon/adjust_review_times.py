@@ -530,6 +530,10 @@ def apply_adjustments(start_date, end_date, source_tz_name, home_tz_name):
             "details": adjustments_made
         })
 
+        # Trigger sync immediately
+        if mw:
+            mw.onSync()
+
         return True, f"Successfully adjusted {len(adjustments_made)} reviews. Backup saved to: {backup_path}"
 
     except Exception as e:
